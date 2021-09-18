@@ -1,0 +1,185 @@
+@import 'configs';
+@import 'responsive';
+
+.nav {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  padding: 1.5rem 3vw 0 6vw;
+
+  h1 {
+    font-size: var(--fs-xl);
+    font-family: var(--ff-heading);
+    color: var(--clr-accent);
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    padding: .8rem 1rem;
+    border-radius: 1.4rem;
+    background: var(--clr-ligth);
+    font-size: calc(var(--fs-xl) * 0.6);
+
+    a {
+      display: inline-block;
+      margin-right: 0.8rem;
+      color: var(--clr-accent);
+      text-decoration: none;
+    }
+
+    i {
+      font-size: var(--fs-xl);
+      color: #B75D5D;
+    }
+  }
+}
+
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../image/SPOILER_sven-fischer-V7WkmXntA8M-unsplash.jpg) top
+    center;
+  background-size: cover;
+
+  &__card {
+    width: calc(20rem + 7vw);
+    max-width: 26rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 1.5rem;
+    background: var(--clr-ligth);
+    border-radius: 1.5rem;
+
+    &--form {
+      width: 100%;
+      text-align: center;
+      margin: 1.1rem 0;
+    }
+
+    &--lable {
+      font-size: var(--fs-600);
+      margin-bottom: 1rem;
+    }
+
+    &--input {
+      width: 90%;
+      height: 2.5rem;
+      padding: 0 0.5rem;
+      background: var(--clr-inpt-bg);
+      position: relative;
+      border: none;
+      border-radius: 0.5rem;
+      @include transition-ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 51%;
+        right:51%;       
+        height: 1px;
+        background-color: var(--clr-udrline);
+        bottom: 0;
+        @include transition-ease;
+      }
+
+      &:focus{
+        outline: none;
+        
+        &::after {
+          left: 0;
+          right: 0;
+          
+        }
+      }
+    }
+
+    .select-wrapper::after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      left: 51%;
+      right: 51%;
+      bottom: 0;
+      background: var(--clr-udrline);
+      @include transition-ease;
+
+    }
+    .select-wrapper:focus-within::after {
+      left: 7%;
+      right: 7%;
+    }
+
+
+
+    &--divider {
+      width: 100%;
+      height: 1px;
+      background: var(--clr-divider);
+      margin: 0.5rem 0 1rem 0;
+    }
+
+    &--btn {
+      margin-top: 1.2rem;
+
+      input {
+        font-size: var(--fs-600);
+        padding: 0.7rem 2.2rem;
+        border:none;
+        color: var(--clr-ligth);
+        background-color: var(--clr-accent);
+        border-radius: .8rem;
+      
+        &:hover {
+          background-color: darken($color: #16a085, $amount: 10%);
+        }
+      }
+    }
+  }
+}
+
+.input-wrapper {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+}
+.input-wrapper:focus-within::before {
+  display: none;
+}
+
+.input-wrapper::before {
+  content: '';
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  font-size: calc(var(--fs-600) * 0.9);
+  white-space: nowrap;
+  top: 0;
+  left: 5%;
+  width: 90%;
+  height: 100%;
+  background: var(--clr-inpt-bg);
+  color: var(--clr-dark);
+  z-index: 1;
+  pointer-events: none;
+}
+
+label[for="location"] .input-wrapper::before {
+  content: 'Select a region';
+}
+
+label[for="check-in"] .input-wrapper::before,
+label[for="check-out"] .input-wrapper::before {
+  content: 'Add a date';
+}
+
