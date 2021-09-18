@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+// font-family: 'Raleway', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root {
+  --ff-body: 'Roboto', sans-serif;
+  --ff-heading: 'Raleway', sans-serif;
+
+  --clr-ligth: #fff;
+  // --clr-dark: #665555;
+  --clr-inpt-bg: #f2f2f2;
+  --clr-divider: #00000056;
+  --clr-dark: hsla(217, 93%, 35%, 0.9);
+  --clr-accent: #16a085;
+  --clr-udrline: #333;
+
+  --fs-xl: clamp(2rem, 3vw + 0.5rem, 3rem);
+  --fs-600: calc(1.4rem + 0.3vw);
+
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--ff-body);
+  scroll-behavior: smooth;
+}
+
+// mixins
+
+@mixin transition-ease {
+  transition: all .3s ease-in-out;
+}
+
+// media queries
+
+@mixin media-md {
+  @media screen and (min-width:768px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}

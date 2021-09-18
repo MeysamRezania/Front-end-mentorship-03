@@ -1,0 +1,46 @@
+@include media-md {
+ 
+  .home {
+    #{&}__card {
+      width: 85%;
+      max-width: 85rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 1.5rem 3rem;
+
+      &--form {
+        max-width: 18rem;
+        text-align: center;
+        margin: 0;
+      }
+
+      &--divider {
+        height: 5rem;
+        width: 2px;
+        // background: var(--clr-divider);
+      }
+
+      &--btn {
+        margin-top: 0;
+        input {
+          font-size: var(--fs-600);
+          padding: 1rem 3rem;
+          margin: 0;
+          border: none;
+          color: var(--clr-ligth);
+          background-color: var(--clr-accent);
+          border-radius: 0.8rem;
+
+          &:hover {
+            background-color: darken($color: #16a085, $amount: 10%);
+          }
+        }
+      }
+
+      .input-wrapper {
+        width: 85%;
+      }
+    }
+  }
+}
