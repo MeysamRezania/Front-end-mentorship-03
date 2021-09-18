@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="./style/main.css">
+    <title>Front-end-mentorship-03</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <h1 class="nav__item">Travel With Us</h1>
+        <div class="nav__item">
+          <a href="#">Account</a>
+          <i class="fas fa-house-user"></i>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="home">
+        <form class="home__card">
+          <div class="home__card--form">
+            <label for="location">
+              <p class="home__card--lable">Where you go?</p>
+              <div class="input-wrapper select-wrapper" tabindex="0">
+                <select class="home__card--input" name="location" id="location" required="">
+                  <option value="us">U.S.</option>
+                  <option value="europe">Europe</option>
+                  <option value="east-asia">East Asia</option>
+                  <option value="australia">Australia</option>
+                  <option value="africa">Africa</option>
+                </select>
+              </div>
+            </label>
+          </div>
+          <div class="home__card--divider"></div>
+          <div class="home__card--form">
+            <label for="check-in">
+              <p class="home__card--lable">Check in</p>
+              <div class="input-wrapper" tabindex="0">
+                <input type="date" class="home__card--input" id="check-in" name="check-in">
+              </div>
+            </label>
+          </div>
+          <div class="home__card--divider"></div>
+          <div class="home__card--form">
+            <label for="check-out">
+              <p class="home__card--lable">Check out</p>
+              <div class="input-wrapper" tabindex="0">
+                <input type="date" class="home__card--input" id="check-out" name="check-out">
+              </div>
+            </label>
+          </div>
+          <div class="home__card--btn">
+            <input type="submit" class="submit-btn" value="Search">
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
