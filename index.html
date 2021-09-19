@@ -26,7 +26,8 @@
             <label for="location">
               <p class="home__card--lable">Where you go?</p>
               <div class="input-wrapper select-wrapper" tabindex="0">
-                <select class="home__card--input" name="location" id="location" required="">
+                <select class="home__card--input" name="location" id="location" required>
+                  <option value="">Select a region</option>
                   <option value="us">U.S.</option>
                   <option value="europe">Europe</option>
                   <option value="east-asia">East Asia</option>
@@ -42,7 +43,7 @@
             <label for="check-in">
               <p class="home__card--lable">Check in</p>
               <div class="input-wrapper" tabindex="0">
-                <input type="date" class="home__card--input" id="check-in" name="check-in">
+                <input type="date" class="home__card--input" id="check-in" name="check-in" required>
                 <span>Add a date</span>
               </div>
             </label>
@@ -52,7 +53,7 @@
             <label for="check-out">
               <p class="home__card--lable">Check out</p>
               <div class="input-wrapper" tabindex="0">
-                <input type="date" class="home__card--input" id="check-out" name="check-out">
+                <input type="date" class="home__card--input" id="check-out" name="check-out" required>
                 <span>Add a date</span>
               </div>
             </label>

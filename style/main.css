@@ -1,3 +1,5 @@
+
+
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 :root {
@@ -16,7 +18,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -31,9 +34,16 @@ html {
   .home .home__card {
     width: 85%;
     max-width: 85rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 1.5rem 3rem;
   }
   .home .home__card--form {
@@ -66,9 +76,15 @@ html {
 }
 .nav {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100vw;
   padding: 1.5rem 3vw 0 6vw;
 }
@@ -76,10 +92,18 @@ html {
   font-size: var(--fs-xl);
   font-family: var(--ff-heading);
   color: var(--clr-accent);
+  cursor: pointer;
+}
+.nav h1:hover {
+  color: #138a72;
 }
 .nav div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0.8rem 1rem;
   border-radius: 1.4rem;
   background: var(--clr-ligth);
@@ -91,6 +115,9 @@ html {
   color: var(--clr-accent);
   text-decoration: none;
 }
+.nav div a:hover {
+  color: #107360;
+}
 .nav div i {
   font-size: var(--fs-xl);
   color: #b75d5d;
@@ -99,19 +126,34 @@ html {
 .home {
   width: 100vw;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: url(../image/SPOILER.jpg) top center;
   background-size: cover;
 }
 .home__card {
   width: calc(20rem + 7vw);
   max-width: 26rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 2.5rem 1.5rem;
   background: var(--clr-ligth);
   border-radius: 1.5rem;
@@ -133,6 +175,8 @@ html {
   position: relative;
   border: none;
   border-radius: 0.5rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 .home__card--input::after {
@@ -143,6 +187,8 @@ html {
   height: 1px;
   background-color: var(--clr-udrline);
   bottom: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 .home__card--input:focus {
@@ -160,6 +206,8 @@ html {
   right: 51%;
   bottom: 0;
   background: var(--clr-udrline);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 .home__card .select-wrapper:focus-within::after {
@@ -194,16 +242,23 @@ html {
   position: relative;
 }
 
+.invisible,
 .input-wrapper:focus-within span {
-  display: none;
+  display: none !important;
 }
 
 .input-wrapper span {
   content: "";
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 0.5rem;
   font-size: calc(var(--fs-600) * 0.9);
   white-space: nowrap;
@@ -225,5 +280,3 @@ label[for=check-in] .input-wrapper span,
 label[for=check-out] .input-wrapper span {
   content: "Add a date";
 }
-
-/*# sourceMappingURL=main.css.map */
