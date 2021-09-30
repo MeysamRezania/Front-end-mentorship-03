@@ -26,14 +26,9 @@
             <label for="location">
               <p class="home__card--lable">Where you go?</p>
               <div class="input-wrapper select-wrapper" tabindex="0">
-                <select class="home__card--input" name="location" id="location" required>
-                  <option value="">Select a region</option>
-                  <option value="us">U.S.</option>
-                  <option value="europe">Europe</option>
-                  <option value="east-asia">East Asia</option>
-                  <option value="australia">Australia</option>
-                  <option value="africa">Africa</option>
-                </select>
+                <input type="text" class="home__card--input" name="location" id="location" list="cities" required>
+                <datalist id="cities">
+                </datalist>
                 <span>Select a region</span>
               </div>
             </label>
