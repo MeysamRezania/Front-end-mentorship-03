@@ -1,3 +1,4 @@
+// tablet size media query
 @include media-md {
  
   .home {
@@ -42,5 +43,19 @@
         width: 85%;
       }
     }
+  }
+}
+
+//
+@include media-sm {
+  .home{
+    background: url(../image/spoiler-t.jpg) top center / cover !important;
+  }
+}
+
+// large screen media query
+@include media-lg {
+  .home{
+    background: url(../image/spioler-d.jpg) top center / cover !important;
   }
 }
