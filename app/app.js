@@ -1,8 +1,8 @@
 // select inputs
 const inputs = document.querySelectorAll('.home__card--input');
 
-// toggle inputs overlay
 inputs.forEach((input) => {
+  // toggle inputs overlay
   input.addEventListener('blur', (event) => {
     if (event.target.value !== '') {
       event.target.parentElement
@@ -14,9 +14,17 @@ inputs.forEach((input) => {
         .classList.remove('invisible');
     }
   });
+
+  // store data locally
+  input.addEventListener('input', (event) => {
+    const targetId = event.target.id;
+    console.log(targetId);
+    localStorage[event.target.id] = event.target.value;
+  })
+
 });
 
-// live city query
+// ajax city query
 
 const locationInput = document.getElementById('location');
 const datalist = locationInput.nextElementSibling; //select the datalist
@@ -32,7 +40,7 @@ locationInput.addEventListener('input', (event) => {
   fetchCities(url) // returns a response with promise 
     .then((response) => response.json()) // returns parsed result
     .then((result) =>
-      result._embedded['city:search-results'].slice(0, 5) // picking first 5 results which are more relevant
+      result._embedded['city:search-results'].slice(0, 4) // picking first 5 results which are more relevant
       .forEach((item) => {
       const datalistOption = document.createElement('option');
       datalistOption.value = item['matching_full_name'];
@@ -40,4 +48,16 @@ locationInput.addEventListener('input', (event) => {
       })
     );
 });
+
+// get items from localStorage on DOMLoading
+
+window.addEventListener('load', () => {
+  inputs.forEach((input) => {
+    input.value = localStorage[input.id] ? localStorage[input.id] : '';
+    input.focus();
+  });
+  document.querySelector('.submit-btn').focus();
+})
+
+
 
